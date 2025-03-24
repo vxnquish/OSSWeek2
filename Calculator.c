@@ -3,9 +3,10 @@
 int main()
 {
     char o;
-    int a, b;
-    printf("Enter an operation: ");
-    scanf("%c", &o);
+    int a, b, c;
+
+    printf("Enter an operation (+, -, *, /): ");
+    scanf(" %c", &o);  // Space before %c to consume newline
 
     printf("Enter the first number: ");
     scanf("%d", &a);
@@ -13,22 +14,30 @@ int main()
     printf("Enter the second number: ");
     scanf("%d", &b);
 
-    int c;
+    switch(o) {
+        case '+':
+            c = a + b;
+            printf("Result: %d\n", c);
+            break;
+        case '-':
+            c = a - b;
+            printf("Result: %d\n", c);
+            break;
+        case '*':
+            c = a * b;
+            printf("Result: %d\n", c);
+            break;
+        case '/':
+            if (b == 0) {
+                printf("Error: Division by zero\n");
+            } else {
+                c = a / b;
+                printf("Result: %d\n", c);
+            }
+            break;
+        default:
+            printf("Error: Invalid operation\n");
+    }
 
-    if(o == '+')
-        c = a+b;
-
-    else if(o == '-')
-        c = a-b;
-
-    else if(o == '*')
-        c = a*b;
-
-    else if(o == '/')
-        c = a/b;
-
-    else
-        printf("Error\n");
-
-    printf("Result: %d\n", c);
+    return 0;
 }
