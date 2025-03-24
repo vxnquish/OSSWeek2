@@ -1,5 +1,5 @@
 def calculator():
-    print("Simple Python Calculator")
+    print("This is a Simple Python Calculator")
     print("Operations: +, -, *, /")
     
     try:
